@@ -13,48 +13,50 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var buttonAnswerB: UIButton!
     @IBOutlet weak var buttonAnswerC: UIButton!
     @IBOutlet weak var buttonAnswerD: UIButton!
+    @IBOutlet weak var questionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonAnswerA.layer.cornerRadius = 20
-        buttonAnswerB.layer.cornerRadius = 20
-        buttonAnswerC.layer.cornerRadius = 20
-        buttonAnswerD.layer.cornerRadius = 20
+        
+        [buttonAnswerA, buttonAnswerB, buttonAnswerC, buttonAnswerD].forEach { (button) in
+            button?.layer.cornerRadius = 20
+        }
+
         // Do any additional setup after loading the view.
     }
-    func wrongAnswer(){
+    func showWrongAnswerAlert(button: UIButton){
+        button.backgroundColor = .red
         let alertController = UIAlertController.init(title: "WRONG 🤮", message: "Try again!", preferredStyle: UIAlertController.Style.alert)
-        present(alertController, animated:true, completion: nil)
-        alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{(_) in alertController.dismiss(animated: true, completion: nil)}))
+        alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{ (_) in self.performSegue(withIdentifier: "ResultView", sender: nil)
+        }))
+        present(alertController, animated: true, completion: nil)
     }
-    func correctAnswer(){
+    func showCorrectAnswerAlert(button: UIButton){
+        button.backgroundColor = .green
         let alertController = UIAlertController.init(title: "Correct! 😋", message: "Well done!", preferredStyle: UIAlertController.Style.alert)
-        present(alertController, animated:true, completion: nil)
-        alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{(_) in alertController.dismiss(animated: true, completion: nil)}))
+        alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{ (_) in self.performSegue(withIdentifier: "ResultView", sender: nil)
+        }))
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func buttonAnswerAHandler(_ sender: Any) {
         print("Martini")
-        buttonAnswerA.backgroundColor = .red
-        wrongAnswer()
+        showWrongAnswerAlert(button: buttonAnswerA)
     }
     
     @IBAction func buttonAnswerBHandler(_ sender: Any) {
         print("Wine")
-        buttonAnswerB.backgroundColor = .red
-        wrongAnswer()
+        showWrongAnswerAlert(button: buttonAnswerB)
     }
     
     @IBAction func buttonAnswerCHandler(_ sender: Any) {
         print("Apple Juice")
-        buttonAnswerC.backgroundColor = .red
-        wrongAnswer()
+        showWrongAnswerAlert(button: buttonAnswerC)
     }
     
     @IBAction func buttonAnswerDHandler(_ sender: Any) {
         print("Beer")
-        buttonAnswerD.backgroundColor = .green
-        correctAnswer()
+        showCorrectAnswerAlert(button: buttonAnswerD)
     }
     
     /*

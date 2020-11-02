@@ -184,11 +184,29 @@
                         <outlet property="buttonAnswerB" destination="KEr-w2-TpH" id="hzk-h6-OZ8"/>
                         <outlet property="buttonAnswerC" destination="uxE-8c-VK9" id="aCZ-oT-hCm"/>
                         <outlet property="buttonAnswerD" destination="TQ5-mE-shx" id="3GO-bz-Toq"/>
+                        <outlet property="questionLabel" destination="Dy7-TQ-QTB" id="KA4-SG-KCE"/>
+                        <segue destination="8pf-gh-hIj" kind="show" identifier="ResultView" id="aU3-zd-6fj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mH-Ta-s2K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1670" y="92"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="USM-px-yZb">
+            <objects>
+                <viewController id="8pf-gh-hIj" customClass="ResultViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FWi-1R-xWr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TUi-KH-LR2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oE7-va-U3l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e5h-Or-AWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2687" y="92"/>
         </scene>
     </scenes>
     <resources>

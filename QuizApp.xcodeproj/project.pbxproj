@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7224AF92550577D002032ED /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7224AF82550577D002032ED /* ResultView.swift */; };
+		B7224B01255057A3002032ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7224B00255057A3002032ED /* ResultViewController.swift */; };
 		B7D551C325495228002D1F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D551C225495228002D1F40 /* AppDelegate.swift */; };
 		B7D551C525495228002D1F40 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D551C425495228002D1F40 /* SceneDelegate.swift */; };
 		B7D551CA25495228002D1F40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7D551C825495228002D1F40 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7224AF82550577D002032ED /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		B7224B00255057A3002032ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		B7D551BF25495228002D1F40 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D551C225495228002D1F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D551C425495228002D1F40 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,8 @@
 				B7D551C225495228002D1F40 /* AppDelegate.swift */,
 				B7D551C425495228002D1F40 /* SceneDelegate.swift */,
 				B7D551C825495228002D1F40 /* Main.storyboard */,
+				B7224AF82550577D002032ED /* ResultView.swift */,
+				B7224B00255057A3002032ED /* ResultViewController.swift */,
 				B7D551CB25495229002D1F40 /* Assets.xcassets */,
 				B7D551CD25495229002D1F40 /* LaunchScreen.storyboard */,
 				B7D551D025495229002D1F40 /* Info.plist */,
@@ -258,8 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7224B01255057A3002032ED /* ResultViewController.swift in Sources */,
 				B7D551C325495228002D1F40 /* AppDelegate.swift in Sources */,
 				B7D551C525495228002D1F40 /* SceneDelegate.swift in Sources */,
+				B7224AF92550577D002032ED /* ResultView.swift in Sources */,
 				B7D55204254961FF002D1F40 /* QuestionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
