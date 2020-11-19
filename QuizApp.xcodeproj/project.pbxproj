@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B7224AF92550577D002032ED /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7224AF82550577D002032ED /* ResultView.swift */; };
 		B7224B01255057A3002032ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7224B00255057A3002032ED /* ResultViewController.swift */; };
+		B77B04522566B82E00DA38B9 /* QuestionsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B04512566B82E00DA38B9 /* QuestionsResult.swift */; };
+		B77B04612566C4F600DA38B9 /* QuizApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B77B045F2566C4F600DA38B9 /* QuizApp.xcdatamodeld */; };
+		B77B04672566C6C000DA38B9 /* GameResult+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B04652566C6C000DA38B9 /* GameResult+CoreDataClass.swift */; };
+		B77B04682566C6C000DA38B9 /* GameResult+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B04662566C6C000DA38B9 /* GameResult+CoreDataProperties.swift */; };
 		B7BDD9B52552B6ED00CC2C37 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDD9B42552B6ED00CC2C37 /* Questions.swift */; };
 		B7BDD9BA2552BB4800CC2C37 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7BDD9B92552BB4800CC2C37 /* StartViewController.swift */; };
 		B7D551C325495228002D1F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D551C225495228002D1F40 /* AppDelegate.swift */; };
@@ -41,6 +45,11 @@
 /* Begin PBXFileReference section */
 		B7224AF82550577D002032ED /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		B7224B00255057A3002032ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		B77B04512566B82E00DA38B9 /* QuestionsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsResult.swift; sourceTree = "<group>"; };
+		B77B04602566C4F600DA38B9 /* QuizApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizApp.xcdatamodel; sourceTree = "<group>"; };
+		B77B04652566C6C000DA38B9 /* GameResult+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameResult+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B77B04662566C6C000DA38B9 /* GameResult+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameResult+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B77B046C2566CEB600DA38B9 /* QuizApp 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "QuizApp 2.xcdatamodel"; sourceTree = "<group>"; };
 		B7BDD9B42552B6ED00CC2C37 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		B7BDD9B92552BB4800CC2C37 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		B7D551BF25495228002D1F40 /* QuizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +116,8 @@
 		B7D551C125495228002D1F40 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				B77B04652566C6C000DA38B9 /* GameResult+CoreDataClass.swift */,
+				B77B04662566C6C000DA38B9 /* GameResult+CoreDataProperties.swift */,
 				B7D551C225495228002D1F40 /* AppDelegate.swift */,
 				B7D551C425495228002D1F40 /* SceneDelegate.swift */,
 				B7D551C825495228002D1F40 /* Main.storyboard */,
@@ -118,6 +129,8 @@
 				B7D55203254961FF002D1F40 /* QuestionViewController.swift */,
 				B7BDD9B42552B6ED00CC2C37 /* Questions.swift */,
 				B7BDD9B92552BB4800CC2C37 /* StartViewController.swift */,
+				B77B04512566B82E00DA38B9 /* QuestionsResult.swift */,
+				B77B045F2566C4F600DA38B9 /* QuizApp.xcdatamodeld */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -271,12 +284,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7224B01255057A3002032ED /* ResultViewController.swift in Sources */,
+				B77B04612566C4F600DA38B9 /* QuizApp.xcdatamodeld in Sources */,
 				B7BDD9BA2552BB4800CC2C37 /* StartViewController.swift in Sources */,
+				B77B04522566B82E00DA38B9 /* QuestionsResult.swift in Sources */,
 				B7D551C325495228002D1F40 /* AppDelegate.swift in Sources */,
 				B7D551C525495228002D1F40 /* SceneDelegate.swift in Sources */,
+				B77B04672566C6C000DA38B9 /* GameResult+CoreDataClass.swift in Sources */,
 				B7BDD9B52552B6ED00CC2C37 /* Questions.swift in Sources */,
 				B7224AF92550577D002032ED /* ResultView.swift in Sources */,
 				B7D55204254961FF002D1F40 /* QuestionViewController.swift in Sources */,
+				B77B04682566C6C000DA38B9 /* GameResult+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +622,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B77B045F2566C4F600DA38B9 /* QuizApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B77B046C2566CEB600DA38B9 /* QuizApp 2.xcdatamodel */,
+				B77B04602566C4F600DA38B9 /* QuizApp.xcdatamodel */,
+			);
+			currentVersion = B77B04602566C4F600DA38B9 /* QuizApp.xcdatamodel */;
+			path = QuizApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B7D551B725495227002D1F40 /* Project object */;
 }

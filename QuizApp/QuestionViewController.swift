@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class QuestionViewController: UIViewController {
 
@@ -16,16 +17,30 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     
     private var haveWon = false
-    var question: Question?
+    var questions: [Question] = []{
+        didSet{
+            question = questions.removeFirst()
+        }
+    }
     
+    var question: Question?
+    var numberOfQuestions = 0
+    var numberOfrightAnswers = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        questionLabel.clipsToBounds = true
+        questionLabel.layer.cornerRadius = 20
+        
         var buttons = [buttonAnswerA, buttonAnswerB, buttonAnswerC, buttonAnswerD]
         
         buttons.forEach { (button) in
             button?.layer.cornerRadius = 20
+            button?.titleLabel?.numberOfLines = 1
+            button?.titleLabel?.adjustsFontSizeToFitWidth = true
+            button?.titleLabel?.lineBreakMode = .byClipping //<-- MAGIC LINE
         }
         questionLabel.text = question?.question
         buttons.shuffle()
@@ -38,23 +53,7 @@ class QuestionViewController: UIViewController {
         })
         // Do any additional setup after loading the view.
     }
-    func showWrongAnswerAlert(button: UIButton){
-        haveWon = false
-        button.backgroundColor = .red
-        let alertController = UIAlertController.init(title: "WRONG 🤮", message: "Try again!", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{ (_) in self.performSegue(withIdentifier: "ResultView", sender: nil)
-        }))
-        present(alertController, animated: true, completion: nil)
-    }
-    func showCorrectAnswerAlert(button: UIButton){
-        haveWon = true
-        button.backgroundColor = .green
-        let alertController = UIAlertController.init(title: "Correct! 😋", message: "Well done!", preferredStyle: UIAlertController.Style.alert)
-        alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{ (_) in self.performSegue(withIdentifier: "ResultView", sender: nil)
-        }))
-        present(alertController, animated: true, completion: nil)
-    }
-    
+
     @IBAction func buttonAnswerAHandler(_ sender: Any) {
         if buttonAnswerA.title(for: .normal) == question?.correctAnswer{
             showCorrectAnswerAlert(button: buttonAnswerA)
@@ -87,6 +86,47 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    func showWrongAnswerAlert(button: UIButton){
+        haveWon = false
+        button.backgroundColor = .red
+        let alertController = UIAlertController.init(title: "WRONG 🤮", message: "Try again!", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{ [weak self] (_) in
+            self?.goToNextScreen()
+        }))
+        present(alertController, animated: true, completion: nil)
+    }
+    func showCorrectAnswerAlert(button: UIButton){
+        haveWon = true
+        button.backgroundColor = .green
+        let alertController = UIAlertController.init(title: "Correct! 😋", message: "Well done!", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{ [weak self] (_) in
+            self?.goToNextScreen()
+        }))
+        numberOfrightAnswers = numberOfrightAnswers + 1
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func goToNextScreen() {
+        guard questions.isEmpty == false, let questionViewController = storyboard?.instantiateViewController(withIdentifier: "QuestionViewController") as? QuestionViewController else{
+                saveGameResult()
+                performSegue(withIdentifier: "ResultView", sender: nil)
+                return
+        }
+        
+        questionViewController.questions = questions
+        questionViewController.numberOfrightAnswers = numberOfrightAnswers
+        questionViewController.numberOfQuestions = numberOfQuestions
+        
+        navigationController?.pushViewController(questionViewController, animated: true)
+        
+    }
+    private func saveGameResult(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedObjectContext = appDelegate.persistentContainer.viewContext
+        
+
+    }
+    
     
     // MARK: - Navigation
 
@@ -94,7 +134,7 @@ class QuestionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let resultViewController = segue.destination as? ResultViewController{
             
-            resultViewController.resultView.resultLabel.text = haveWon ? "🥳":"☹️"
+            resultViewController.resultView.resultLabel.text = "🤩 You answered \(numberOfrightAnswers) right from \(numberOfQuestions) questions"
         }
         
     }
