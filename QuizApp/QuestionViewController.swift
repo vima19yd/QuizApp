@@ -124,7 +124,12 @@ class QuestionViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedObjectContext = appDelegate.persistentContainer.viewContext
         
-
+        if let gameResult = NSEntityDescription.insertNewObject(forEntityName: "GameResult", into: managedObjectContext) as? GameResult{
+            gameResult.date = Date()
+            gameResult.numberOfRightAnswers = Int32(numberOfrightAnswers)
+            gameResult.numberOfQuestions = Int32(numberOfQuestions)
+            
+        }
     }
     
     
