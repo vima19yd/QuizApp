@@ -34,7 +34,7 @@ class QuestionViewController: UIViewController {
         navigationItem.hidesBackButton = true
         
         questionLabel.clipsToBounds = true
-        questionLabel.layer.cornerRadius = 20
+        questionLabel.layer.cornerRadius = 30
         
         var buttons = [buttonAnswerA, buttonAnswerB, buttonAnswerC, buttonAnswerD]
         

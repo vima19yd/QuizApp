@@ -45,12 +45,13 @@
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Y5H-Np-BQe" kind="show" id="A7d-AG-LZX"/>
+                                            <action selector="startButtonHandler:" destination="9iF-Bw-KaT" eventType="touchUpInside" id="Fb3-UL-Jf5"/>
+                                            <segue destination="xlq-YS-fn5" kind="show" id="eXh-L9-eue"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1G-ko-XM8">
                                         <rect key="frame" x="0.0" y="387" width="414" height="387"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Highscore">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -78,7 +79,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9QA-QV-A9h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="644.92753623188412" y="91.741071428571431"/>
+            <point key="canvasLocation" x="539" y="92"/>
+        </scene>
+        <!--Difficulty View Controller-->
+        <scene sceneID="FsP-28-6Tt">
+            <objects>
+                <viewController id="xlq-YS-fn5" customClass="DifficultyViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QGT-4E-hrp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8F7-yG-jnp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMS-U6-e5e">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="258"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Hard">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="hardButtonHandler:" destination="xlq-YS-fn5" eventType="touchUpInside" id="fBS-yP-S3N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seh-gu-3df">
+                                        <rect key="frame" x="0.0" y="258" width="414" height="258"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Medium">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="mediumButtonHandler:" destination="xlq-YS-fn5" eventType="touchUpInside" id="M9c-vX-htY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2c-LV-UL4">
+                                        <rect key="frame" x="0.0" y="516" width="414" height="258"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Easy">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="easyButtonHandler:" destination="xlq-YS-fn5" eventType="touchUpInside" id="tIi-xG-j5A"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1xV-z3-G9a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8F7-yG-jnp" firstAttribute="top" secondItem="1xV-z3-G9a" secondAttribute="top" id="0rF-yH-DmM"/>
+                            <constraint firstItem="8F7-yG-jnp" firstAttribute="trailing" secondItem="1xV-z3-G9a" secondAttribute="trailing" id="aaQ-bE-ots"/>
+                            <constraint firstItem="8F7-yG-jnp" firstAttribute="bottom" secondItem="1xV-z3-G9a" secondAttribute="bottom" id="eFg-VD-seY"/>
+                            <constraint firstItem="8F7-yG-jnp" firstAttribute="leading" secondItem="1xV-z3-G9a" secondAttribute="leading" id="tjP-lt-NJy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZjT-ef-fr7"/>
+                    <connections>
+                        <segue destination="Y5H-Np-BQe" kind="show" identifier="QuestionViewController" id="ZJY-7w-M0H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M6L-rA-6Tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1317" y="92"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="MhB-bT-V2C">
@@ -196,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mH-Ta-s2K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="92"/>
+            <point key="canvasLocation" x="2088" y="92"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="USM-px-yZb">
@@ -212,7 +278,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e5h-Or-AWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2687" y="92"/>
+            <point key="canvasLocation" x="3051" y="92"/>
         </scene>
     </scenes>
     <resources>
@@ -230,6 +296,12 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
