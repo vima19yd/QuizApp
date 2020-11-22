@@ -34,20 +34,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsB-v9-CfQ">
-                                <rect key="frame" x="155.5" y="427.5" width="103" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Start Quiz"/>
-                                <connections>
-                                    <segue destination="Y5H-Np-BQe" kind="show" id="A7d-AG-LZX"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="uEb-lV-See">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsB-v9-CfQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="387"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Start Quiz">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="Y5H-Np-BQe" kind="show" id="A7d-AG-LZX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1G-ko-XM8">
+                                        <rect key="frame" x="0.0" y="387" width="414" height="387"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <state key="normal" title="Highscore">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="highscoreButtonHandler:" destination="9iF-Bw-KaT" eventType="touchUpInside" id="vPf-wz-4Nm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iTe-gW-bvE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XsB-v9-CfQ" firstAttribute="centerY" secondItem="s7f-6u-Mhb" secondAttribute="centerY" id="2hw-jQ-bJj"/>
-                            <constraint firstItem="XsB-v9-CfQ" firstAttribute="centerX" secondItem="s7f-6u-Mhb" secondAttribute="centerX" id="hH3-O3-mpa"/>
+                            <constraint firstItem="uEb-lV-See" firstAttribute="leading" secondItem="iTe-gW-bvE" secondAttribute="leading" id="5Nm-Pu-xxz"/>
+                            <constraint firstItem="uEb-lV-See" firstAttribute="top" secondItem="iTe-gW-bvE" secondAttribute="top" id="PNu-DT-gqe"/>
+                            <constraint firstItem="uEb-lV-See" firstAttribute="trailing" secondItem="iTe-gW-bvE" secondAttribute="trailing" id="pqK-pF-g3I"/>
+                            <constraint firstItem="uEb-lV-See" firstAttribute="bottom" secondItem="iTe-gW-bvE" secondAttribute="bottom" id="wf8-ba-DJn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="QuizApp" id="PZO-CS-LMg"/>
@@ -83,28 +104,33 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3po-L2-Wg2">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="168.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pIE-cH-Ibr">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="pIE-cH-Ibr">
                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="168.5"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                                        <state key="normal" title="1">
+                                                        <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="titleLabel.numberOfLines">
+                                                                <integer key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="buttonAnswerAHandler:" destination="Y5H-Np-BQe" eventType="touchUpInside" id="pKV-Yf-5jD"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="KEr-w2-TpH">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="KEr-w2-TpH">
                                                         <rect key="frame" x="197" y="0.0" width="177" height="168.5"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <color key="tintColor" name="AccentColor"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                                        <state key="normal" title="2">
+                                                        <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -116,26 +142,26 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="maN-jg-5qf">
                                                 <rect key="frame" x="0.0" y="188.5" width="374" height="168.5"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-8c-VK9">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-8c-VK9">
                                                         <rect key="frame" x="0.0" y="0.0" width="177" height="168.5"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                                        <state key="normal" title="3">
+                                                        <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="buttonAnswerCHandler:" destination="Y5H-Np-BQe" eventType="touchUpInside" id="KzK-Yv-tB6"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TQ5-mE-shx">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="TQ5-mE-shx">
                                                         <rect key="frame" x="197" y="0.0" width="177" height="168.5"/>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                         <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
                                                         <inset key="titleEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                                        <state key="normal" title="4">
+                                                        <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -196,8 +222,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

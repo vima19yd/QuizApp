@@ -31,6 +31,8 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.hidesBackButton = true
+        
         questionLabel.clipsToBounds = true
         questionLabel.layer.cornerRadius = 20
         
@@ -88,21 +90,30 @@ class QuestionViewController: UIViewController {
     
     func showWrongAnswerAlert(button: UIButton){
         haveWon = false
+        
         button.backgroundColor = .red
-        let alertController = UIAlertController.init(title: "WRONG 🤮", message: "Try again!", preferredStyle: UIAlertController.Style.alert)
+        let alertController = UIAlertController.init(title: "WRONG ☹️", message: "Correct answer was \(question?.correctAnswer ?? "Not Found")", preferredStyle: UIAlertController.Style.alert)
+        
         alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{ [weak self] (_) in
             self?.goToNextScreen()
         }))
+        
         present(alertController, animated: true, completion: nil)
     }
     func showCorrectAnswerAlert(button: UIButton){
+        
         haveWon = true
+        
         button.backgroundColor = .green
-        let alertController = UIAlertController.init(title: "Correct! 😋", message: "Well done!", preferredStyle: UIAlertController.Style.alert)
+        
+        let alertController = UIAlertController.init(title: "Correct! 🤩", message: "Well done!", preferredStyle: UIAlertController.Style.alert)
+        
         alertController.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler:{ [weak self] (_) in
             self?.goToNextScreen()
         }))
+        
         numberOfrightAnswers = numberOfrightAnswers + 1
+        
         present(alertController, animated: true, completion: nil)
     }
     
@@ -128,6 +139,7 @@ class QuestionViewController: UIViewController {
             gameResult.date = Date()
             gameResult.numberOfRightAnswers = Int32(numberOfrightAnswers)
             gameResult.numberOfQuestions = Int32(numberOfQuestions)
+            appDelegate.saveContext()
             
         }
     }

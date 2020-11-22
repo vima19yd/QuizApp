@@ -13,14 +13,20 @@ class StartViewController: UIViewController {
     
     @IBOutlet weak var startButton: UIButton!
     
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         startButton.isEnabled = false
-        // Do any additional setup after loading the view.
         downloadQuesitons(amount: 5)
+        // Do any additional setup after loading the view.
     }
     
     
+    @IBAction func highscoreButtonHandler(_ sender: Any) {
+        let highscoreTableViewController = HighscoreTableViewController()
+        navigationController?.pushViewController(highscoreTableViewController, animated: true)
+        
+    }
     
     private func downloadQuesitons(amount: Int){
         guard let url = URL(string:"https://opentdb.com/api.php?amount=\(amount)&type=multiple") else{
@@ -48,12 +54,8 @@ class StartViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let questionViewController = segue.destination as? QuestionViewController{
-//            let question = Question(category: "Drinks", type: .multiple, difficulty:.easy, question: "What type of drink would I prefer", correctAnswer: "🥤", incorrectAnswers: ["🧃","🧉","🥃"])
-//            let question2 = Question(category: "Test", type: .multiple, difficulty:.easy, question: "What type of test would I prefer", correctAnswer: "🤩", incorrectAnswers: ["🧐","🤨","😟"])
-            // let questions = [question,question2]
             questionViewController.questions = questions
             questionViewController.numberOfQuestions = questions.count
-            
         }
     }
 }

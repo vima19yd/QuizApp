@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B7224AF92550577D002032ED /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7224AF82550577D002032ED /* ResultView.swift */; };
 		B7224B01255057A3002032ED /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7224B00255057A3002032ED /* ResultViewController.swift */; };
+		B742FA7A256A9FDE00454605 /* HighscoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B742FA79256A9FDE00454605 /* HighscoreTableViewController.swift */; };
 		B77B04522566B82E00DA38B9 /* QuestionsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B04512566B82E00DA38B9 /* QuestionsResult.swift */; };
 		B77B04612566C4F600DA38B9 /* QuizApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B77B045F2566C4F600DA38B9 /* QuizApp.xcdatamodeld */; };
 		B77B04672566C6C000DA38B9 /* GameResult+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77B04652566C6C000DA38B9 /* GameResult+CoreDataClass.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		B7224AF82550577D002032ED /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		B7224B00255057A3002032ED /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		B742FA79256A9FDE00454605 /* HighscoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreTableViewController.swift; sourceTree = "<group>"; };
 		B77B04512566B82E00DA38B9 /* QuestionsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsResult.swift; sourceTree = "<group>"; };
 		B77B04602566C4F600DA38B9 /* QuizApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizApp.xcdatamodel; sourceTree = "<group>"; };
 		B77B04652566C6C000DA38B9 /* GameResult+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameResult+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				B7BDD9B92552BB4800CC2C37 /* StartViewController.swift */,
 				B77B04512566B82E00DA38B9 /* QuestionsResult.swift */,
 				B77B045F2566C4F600DA38B9 /* QuizApp.xcdatamodeld */,
+				B742FA79256A9FDE00454605 /* HighscoreTableViewController.swift */,
 			);
 			path = QuizApp;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B742FA7A256A9FDE00454605 /* HighscoreTableViewController.swift in Sources */,
 				B7224B01255057A3002032ED /* ResultViewController.swift in Sources */,
 				B77B04612566C4F600DA38B9 /* QuizApp.xcdatamodeld in Sources */,
 				B7BDD9BA2552BB4800CC2C37 /* StartViewController.swift in Sources */,
