@@ -139,7 +139,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZjT-ef-fr7"/>
                     <connections>
-                        <segue destination="Y5H-Np-BQe" kind="show" identifier="QuestionViewController" id="ZJY-7w-M0H"/>
+                        <segue destination="Y5H-Np-BQe" kind="show" identifier="ToQuestions" id="ZJY-7w-M0H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M6L-rA-6Tv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
